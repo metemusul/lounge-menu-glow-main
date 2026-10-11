@@ -161,6 +161,7 @@ const menu: MenuCategory[] = [
       {
         name: "Patates Tava",
         detail: "Özel baharat & dip sos",
+        price: 200,
         image: "/images/patates-tava.jpg",
         imageAlt: "Patates Tava sunumu",
         description: "Altın sarısı çıtır çıtır kızarmış patates dilimleri, özel baharat harmanı ve dip soslar eşliğinde sıcak servis edilir.",
@@ -168,6 +169,7 @@ const menu: MenuCategory[] = [
       {
         name: "Sosis & Patates",
         detail: "Kızarmış dana sosis tabağı",
+        price: 220,
         image: "/images/sosis-patates.jpg",
         imageAlt: "Sosis & Patates sunumu",
         description: "Kızarmış dana sosisler ve çıtır patatesler, soslar eşliğinde sohbetlerinize eşlik edecek nefis bir atıştırmalık kombinasyonu.",
@@ -175,6 +177,7 @@ const menu: MenuCategory[] = [
       {
         name: "Crispy Party",
         detail: "Zengin paylaşımlık sepet",
+        price: 320,
         image: "/images/crispy-party.jpg",
         imageAlt: "Crispy Party sunumu",
         description: "Çıtır tavuk parçaları, soğan halkaları, sigara böreği ve patates tava ile hazırlanmış zengin ve keyifli bir paylaşımlık sepet.",
@@ -182,6 +185,7 @@ const menu: MenuCategory[] = [
       {
         name: "Sigara Böreği",
         detail: "Lor peynirli & çıtır yufka",
+        price: 220,
         image: "/images/sigara-boregi.jpg",
         imageAlt: "Sigara Böreği sunumu",
         description: "İncecik yufkaya sarılmış özel böreklik lor ve maydanoz harcı; altın sarısı nar gibi kızartılarak çıtır çıtır sunulur.",
@@ -254,6 +258,7 @@ const menu: MenuCategory[] = [
       {
         name: "Cup Tatlı",
         detail: "Hafif kremalı porsiyonluk tatlı",
+        price: 220,
         image: "/images/cup-tatli.jpg",
         imageAlt: "Cup Tatlı sunumu",
         description: "Kat kat hafif krema, taze meyve parçaları ve bisküvi kırıntılarıyla hazırlanan ferahlatıcı porsiyonluk tatlı.",
@@ -332,15 +337,9 @@ const menu: MenuCategory[] = [
         description: "Zihni ve bedeni canlandıran, yüksek tempolu anlara enerji katan premium enerji içeceği.",
       },
       {
-        name: "Meyfit Solo",
-        detail: "Doğal vitamin içeriği",
-        image: "/images/meyfit-solo.jpg",
-        imageAlt: "Meyfit Solo sunumu",
-        description: "Zengin meyve içeriğiyle tazeleyen ve ferahlatan hafif içecek seçeneği.",
-      },
-      {
         name: "Cappy",
         detail: "Meyve suyu çeşitleri",
+        price: 100,
         image: "/images/cappy.jpg",
         imageAlt: "Cappy sunumu",
         description: "Taptaze meyvelerin lezzetini sunan zengin aromalı kaliteli meyve suyu.",
@@ -446,6 +445,7 @@ const menu: MenuCategory[] = [
       {
         name: "Limonata",
         detail: "Ev yapımı geleneksel tarif",
+        price: 140,
         image: "/images/limonata.jpg",
         imageAlt: "Limonata sunumu",
         description: "Taze limon kabukları ve suyunun doğal pancar şekeriyle ovulmasıyla hazırlanan ev yapımı geleneksel limonata.",
@@ -453,6 +453,7 @@ const menu: MenuCategory[] = [
       {
         name: "Çilekli Limonata",
         detail: "Taze çilek püresi ilavesiyle",
+        price: 150,
         image: "/images/cilekli-limonata.jpg",
         imageAlt: "Çilekli Limonata sunumu",
         description: "Klasik ekşi-tatlı limonataya eklenen taze çilek püresiyle çift kat meyve ferahlığı.",
@@ -460,6 +461,7 @@ const menu: MenuCategory[] = [
       {
         name: "Naneli Limonata",
         detail: "Taze nane yapraklarıyla blender",
+        price: 150,
         image: "/images/naneli-limonata.jpg",
         imageAlt: "Naneli Limonata sunumu",
         description: "Taze nane yapraklarıyla harmanlanan, ekstra serinlik hissi veren ev yapımı naneli limonata.",
@@ -686,6 +688,7 @@ const menu: MenuCategory[] = [
       {
         name: "Nescafe",
         detail: "Sütlü veya sade klasik kahve",
+        price: 100,
         image: "/images/nescafe.jpg",
         imageAlt: "Nescafe sunumu",
         description: "Pratik ve klasik kahve tadını sevenler için sıcak süt veya su ile hazırlanan kahve.",

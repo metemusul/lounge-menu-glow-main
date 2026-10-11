@@ -1,4 +1,5 @@
 import { formatPrice } from "@/lib/price";
+import { cn } from "@/lib/utils";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef, useState, type ReactNode } from "react";
 
@@ -63,11 +64,11 @@ export function HeroParallax({ children }: { children: ReactNode }) {
 }
 
 /** 3D fold reveal: rotateX 45 -> 0 with staggered spring per row. */
-export function TiltReveal({ children, index }: { children: ReactNode; index: number }) {
+export function TiltReveal({ children, index, className }: { children: ReactNode; index: number; className?: string }) {
   const reduce = useReducedMotion();
   return (
     <motion.div
-      className="[perspective:1000px]"
+      className={cn("[perspective:1000px]", className)}
       initial={reduce ? false : { opacity: 0, rotateX: 45, scale: 0.9, y: 50 }}
       whileInView={{ opacity: 1, rotateX: 0, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -6% 0px" }}

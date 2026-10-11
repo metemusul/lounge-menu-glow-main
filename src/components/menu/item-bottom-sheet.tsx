@@ -4,15 +4,24 @@ import { Button } from "@/components/ui/button";
 import { DrawerClose, DrawerContent, DrawerDescription, DrawerTitle } from "@/components/ui/drawer";
 
 interface ItemBottomSheetProps {
-  item: { name: string; image: string; imageAlt: string; detail?: string; price?: number | undefined } | null;
+  item: {
+    name: string;
+    image: string;
+    imageAlt: string;
+    detail?: string;
+    price?: number | undefined;
+    description?: string;
+  } | null;
 }
 
 export function ItemBottomSheet({ item }: ItemBottomSheetProps) {
   if (!item) return null;
 
-
   return (
     <DrawerContent
+      onCloseAutoFocus={(e) => {
+        e.preventDefault();
+      }}
       className="item-bottom-sheet z-[101] mx-auto mt-0 max-h-[90dvh] w-full max-w-2xl overflow-hidden rounded-t-3xl border-border bg-card text-card-foreground outline-none"
       overlayClassName="item-sheet-overlay z-[100] bg-overlay/70 backdrop-blur-sm"
       handleClassName="mb-4 mt-3 h-1 w-10 shrink-0 bg-muted-foreground/40"
@@ -29,9 +38,9 @@ export function ItemBottomSheet({ item }: ItemBottomSheetProps) {
             <DrawerTitle className="min-w-0 break-words font-display text-2xl font-semibold leading-tight tracking-normal sm:text-3xl">{item.name}</DrawerTitle>
             <span className="shrink-0 rounded-md border border-primary/30 bg-primary/10 px-3 py-2 text-base font-bold text-gold-light">{formatPrice(item.price)}</span>
           </div>
-          {item.detail && <p className="mt-2 text-sm leading-6 text-gold-muted">{item.detail}</p>}
+          {item.detail && <p className="mt-2 text-sm font-medium leading-6 text-gold-light/90">{item.detail}</p>}
           <DrawerDescription className="mt-5 text-sm leading-7 text-muted-foreground">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Taze ve özenle seçilmiş malzemelerle, şefimizin özel tarifiyle hazırlanmıştır.
+            {item.description || (item.detail ? `${item.detail} ile özenle hazırlanmıştır.` : "Özenle seçilmiş taze malzemeler ve şefimizin özel sunumuyla hazırlanmıştır.")}
           </DrawerDescription>
         </div>
       </div>

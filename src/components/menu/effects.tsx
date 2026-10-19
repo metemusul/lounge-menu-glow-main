@@ -68,7 +68,7 @@ export function TiltReveal({ children, index, className }: { children: ReactNode
   const reduce = useReducedMotion();
   return (
     <motion.div
-      className={cn("[perspective:1000px]", className)}
+      className={cn("[perspective:1000px] w-full min-w-0", className)}
       initial={reduce ? false : { opacity: 0, rotateX: 45, scale: 0.9, y: 50 }}
       whileInView={{ opacity: 1, rotateX: 0, scale: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -6% 0px" }}

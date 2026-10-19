@@ -1371,17 +1371,17 @@ function Index() {
                         <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-primary">
                           {String(categoryIndex + 1).padStart(2, "0")} · {category.eyebrow}
                         </p>
-                        <h2 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                        <h2 className="font-display text-2xl min-[400px]:text-3xl font-semibold leading-tight text-foreground sm:text-4xl break-words">
                           {category.name}
                         </h2>
                       </div>
                       <Icon className="size-7 shrink-0 text-gold-muted sm:size-8" aria-hidden="true" />
                     </header>
 
-                    <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                       {category.items.map((item, itemIndex) => (
-                        <TiltReveal key={`${category.id}-${item.name}`} index={itemIndex} className="h-full">
-                          <article className="h-full">
+                        <TiltReveal key={`${category.id}-${item.name}`} index={itemIndex} className="h-full w-full min-w-0">
+                          <article className="h-full w-full min-w-0">
                             <button
                               type="button"
                               onClick={() => {
@@ -1389,9 +1389,9 @@ function Index() {
                                 setSheetOpen(true);
                               }}
                               aria-label={`${item.name} detayları`}
-                              className="menu-card group flex h-28 sm:h-32 w-full items-stretch overflow-hidden rounded-xl border border-border bg-card p-0 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer"
+                              className="menu-card group flex min-h-[6.75rem] sm:min-h-[7.5rem] md:min-h-[8rem] h-auto w-full min-w-0 max-w-full items-stretch overflow-hidden rounded-xl border border-border bg-card p-0 text-left transition-all duration-300 hover:border-primary/50 hover:shadow-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer"
                             >
-                              <div className="relative w-28 sm:w-36 shrink-0 overflow-hidden bg-secondary">
+                              <div className="relative w-24 min-[380px]:w-28 sm:w-28 md:w-36 shrink-0 overflow-hidden bg-secondary">
                                 <img
                                   src={item.image}
                                   alt={item.imageAlt}
@@ -1400,16 +1400,16 @@ function Index() {
                                 />
                                 <div className="absolute inset-0 bg-image-shade pointer-events-none" aria-hidden="true" />
                               </div>
-                              <div className="flex min-w-0 flex-1 items-center justify-between gap-3 p-3.5 sm:p-5">
-                                <div className="min-w-0 flex-1">
-                                  <h3 className="truncate font-display text-base font-semibold leading-snug text-card-foreground sm:text-lg">
+                              <div className="flex min-w-0 flex-1 items-center justify-between gap-2 p-3 sm:p-3.5 md:p-5 sm:gap-3">
+                                <div className="min-w-0 flex-1 pr-1">
+                                  <h3 className="line-clamp-2 font-display text-sm min-[380px]:text-base font-semibold leading-snug text-card-foreground md:text-lg">
                                     {item.name}
                                   </h3>
-                                  <p className="mt-1 line-clamp-1 text-xs leading-5 text-muted-foreground sm:text-sm">
+                                  <p className="mt-1 line-clamp-1 text-[0.7rem] min-[380px]:text-xs leading-normal text-muted-foreground md:text-sm">
                                     {item.detail ?? "Özenle hazırlanır"}
                                   </p>
                                 </div>
-                                <span className="price-tag shrink-0 rounded-md border border-primary/30 bg-primary/10 px-2.5 py-1.5 text-xs font-bold text-gold-light sm:text-sm">
+                                <span className="price-tag shrink-0 whitespace-nowrap rounded-md border border-primary/30 bg-primary/10 px-2 py-1 sm:px-2.5 sm:py-1.5 text-xs font-bold text-gold-light md:text-sm">
                                   {formatPrice(item.price)}
                                 </span>
                               </div>

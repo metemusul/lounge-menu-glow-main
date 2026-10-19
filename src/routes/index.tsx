@@ -1271,8 +1271,15 @@ function Index() {
   }, []);
 
   useEffect(() => {
-    const activeLink = navRef.current?.querySelector<HTMLElement>(`[data-category="${activeCategory}"]`);
-    activeLink?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const nav = navRef.current;
+    if (!nav) return;
+    const scrollContainer = nav.querySelector<HTMLElement>(".overflow-x-auto");
+    const activeLink = nav.querySelector<HTMLElement>(`[data-category="${activeCategory}"]`);
+    if (scrollContainer && activeLink) {
+      const targetLeft =
+        activeLink.offsetLeft - scrollContainer.clientWidth / 2 + activeLink.clientWidth / 2;
+      scrollContainer.scrollTo({ left: targetLeft, behavior: "smooth" });
+    }
   }, [activeCategory]);
 
   return (
